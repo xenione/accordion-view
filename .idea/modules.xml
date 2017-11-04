@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AccordionView.iml" filepath="$PROJECT_DIR$/AccordionView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/accordion/accordion.iml" filepath="$PROJECT_DIR$/accordion/accordion.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
