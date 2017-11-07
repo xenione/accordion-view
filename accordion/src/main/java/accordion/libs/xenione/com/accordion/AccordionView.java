@@ -26,6 +26,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
+import static android.graphics.Bitmap.createBitmap;
+
 public class AccordionView extends FrameLayout {
 
     private float percentage = 0;
@@ -109,28 +111,27 @@ public class AccordionView extends FrameLayout {
     private void drawFolder(Canvas canvas) {
 
         srcPoint[0] = getWidth() / 2;
-        srcPoint[1] = getHeight() / 2;
+        srcPoint[1] = 0;
 
-        float alpha = 90 * percentage;
+
+        float alpha = (90 * percentage);
 
         // draw left half
         matrixHelper.rotateY(drawLeftMatrix, alpha, 0, getHeight() / 2);
         drawLeftMatrix.mapPoints(dstPoint, srcPoint);
 
-        // need to scale canvas to coverall view width
-        float error = getWidth() * (1 - percentage) - 2 * dstPoint[0];
-        float scale = 1 + error / getWidth();
-        canvas.scale(scale, scale);
+        float scale = (getWidth() * (1 - percentage)) / (2 * dstPoint[0]);
 
         canvas.translate(percentage * getWidth(), 0);
+        drawLeftMatrix.postScale(scale, scale, 0, getHeight() / 2);
         canvas.drawBitmap(leftBitmap, drawLeftMatrix, null);
 
         // draw right half
         projMatrix.setTranslate(getWidth() / 2, 0);
         matrixHelper.rotateY(drawRightMatrix, -alpha, getWidth() / 2, getHeight() / 2);
-        drawRightMatrix.postTranslate(2 * (dstPoint[0] - getWidth() / 2), 0);
-
+        drawRightMatrix.postTranslate(2 * (dstPoint[0] - getWidth() / 2), 0); //-getWidth() * percentage
         drawRightMatrix.setConcat(projMatrix, drawRightMatrix);
+        drawRightMatrix.postScale(scale, scale, 0, getHeight() / 2);
         canvas.drawBitmap(rightBitmap, drawRightMatrix, null);
     }
 
@@ -141,9 +142,9 @@ public class AccordionView extends FrameLayout {
 
     private void captureScreen() {
         this.setDrawingCacheEnabled(true);
-        Bitmap cacheBitmap = Bitmap.createBitmap(this.getDrawingCache());
-        leftBitmap = Bitmap.createBitmap(cacheBitmap, 0, 0, getWidth() / 2, getHeight());
-        rightBitmap = Bitmap.createBitmap(cacheBitmap, getWidth() / 2, 0, getWidth() / 2, getHeight());
+        Bitmap cacheBitmap = createBitmap(this.getDrawingCache());
+        leftBitmap = createBitmap(cacheBitmap, 0, 0, getWidth() / 2, getHeight());
+        rightBitmap = createBitmap(cacheBitmap, getWidth() / 2, 0, getWidth() / 2, getHeight());
         this.setDrawingCacheEnabled(false);
     }
 }
