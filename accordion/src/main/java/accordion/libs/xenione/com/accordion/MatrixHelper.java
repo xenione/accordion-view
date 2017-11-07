@@ -23,7 +23,7 @@ import android.graphics.Matrix;
 /**
  * Helper class to apply transformation into Matrix
  *
- * @author HEugeni Senent
+ * @author Eugeni Senent
  */
 public class MatrixHelper {
 
