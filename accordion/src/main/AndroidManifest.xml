@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="accordion.libs.xenione.com.accordion">
+    package="com.libs.xenione.com.accordion">
 
     <application android:allowBackup="true" android:label="@string/app_name"
         android:supportsRtl="true">
