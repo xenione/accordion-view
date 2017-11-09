@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.libs.xenione.com.myapplication;
+package com.xenione.demos.accordion.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,11 +26,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.libs.xenione.com.accordion.AccordionView;
+import com.xenione.accordion.AccordionView;
+import com.xenione.demos.accordion.R;
 
-public class FragmentOne extends Fragment {
 
-    private MyAdapter mAdapter;
+public class AccordionFragment extends Fragment {
+
+    private AccordionAdapter mAdapter;
     private LinearLayoutManager layoutManager;
     private AccordionView accordionView;
 
@@ -38,7 +40,7 @@ public class FragmentOne extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         layoutManager = new LinearLayoutManager(getContext());
-        mAdapter = new MyAdapter(new String[]{"orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
+        mAdapter = new AccordionAdapter(new String[]{"orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
                 "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
                 "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
                 "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
@@ -60,7 +62,8 @@ public class FragmentOne extends Fragment {
     }
 
 
-    public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    public static class AccordionAdapter extends RecyclerView.Adapter<AccordionAdapter.ViewHolder> {
+
         private String[] mDataset;
 
 
@@ -73,13 +76,13 @@ public class FragmentOne extends Fragment {
             }
         }
 
-        public MyAdapter(String[] myDataset) {
+        public AccordionAdapter(String[] myDataset) {
             mDataset = myDataset;
         }
 
         @Override
-        public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                       int viewType) {
+        public AccordionAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                              int viewType) {
 
             TextView v = (TextView) LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.my_text_view, parent, false);

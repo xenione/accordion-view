@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pager"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.libs.xenione.com.myapplication.MainActivity" />
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.xenione.accordion.AccordionView
+        android:id="@+id/accordion_lateral_menu"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_lateral_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.xenione.accordion.AccordionView>
+</android.support.v4.widget.DrawerLayout>

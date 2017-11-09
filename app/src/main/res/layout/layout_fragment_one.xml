@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.libs.xenione.com.accordion.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.xenione.accordion.AccordionView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@id/accordionView"
     android:layout_width="match_parent"
     android:layout_height="0dp"
@@ -12,4 +13,4 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
 
-</com.libs.xenione.com.accordion.AccordionView>
+</com.xenione.accordion.AccordionView>

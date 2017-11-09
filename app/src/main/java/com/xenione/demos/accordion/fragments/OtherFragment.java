@@ -1,4 +1,3 @@
-package com.libs.xenione.com.accordion;
 /*
 Copyright 04/11/2017 Eugeni Josep Senent i Gabriel
 
@@ -15,27 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import android.support.v4.view.ViewPager;
+package com.xenione.demos.accordion.fragments;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
-public class AccordionPageTransormer implements ViewPager.PageTransformer {
+import com.xenione.demos.accordion.R;
 
+public class OtherFragment extends Fragment {
+
+    @Nullable
     @Override
-    public void transformPage(View page, float position) {
-        Holder holder = (Holder) page.getTag();
-        if (holder == null) {
-            holder = new Holder();
-            holder.view = page.findViewById(R.id.accordionView);
-            page.setTag(holder);
-        }
-
-        if (holder.view != null) {
-            holder.view.setProgress(Math.abs(position));
-        }
-    }
-
-    private static class Holder {
-
-        AccordionView view;
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.layout_fragment_two, container, false);
+        return view;
     }
 }

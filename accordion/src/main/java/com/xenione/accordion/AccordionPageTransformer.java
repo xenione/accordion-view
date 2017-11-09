@@ -13,22 +13,30 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+package com.xenione.accordion;
 
-package com.libs.xenione.com.myapplication;
-
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 
-public class FragmentTwo extends Fragment {
 
-    @Nullable
+public class AccordionPageTransformer implements ViewPager.PageTransformer {
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.layout_fragment_two, container, false);
-        return view;
+    public void transformPage(View page, float position) {
+        Holder holder = (Holder) page.getTag();
+        if (holder == null) {
+            holder = new Holder();
+            holder.view = page.findViewById(R.id.accordionView);
+            page.setTag(holder);
+        }
+
+        if (holder.view != null) {
+            holder.view.setProgress(Math.abs(position));
+        }
+    }
+
+    private static class Holder {
+
+        AccordionView view;
     }
 }
