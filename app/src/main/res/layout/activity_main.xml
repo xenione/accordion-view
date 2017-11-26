@@ -20,5 +20,15 @@
             android:id="@+id/list_lateral_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="#7F000000"
+            android:padding="@dimen/title_text_padding"
+            android:text="@string/title_lateral_menu_accordion"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </com.xenione.libs.accordion.AccordionView>
 </android.support.v4.widget.DrawerLayout>

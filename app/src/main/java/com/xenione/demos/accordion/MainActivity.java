@@ -7,15 +7,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.xenione.demos.accordion.fragments.PagerAdapter;
 import com.xenione.libs.accordion.AccordionPageTransformer;
 import com.xenione.libs.accordion.AccordionView;
-import com.xenione.demos.accordion.fragments.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,22 +28,22 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onDrawerSlide(View drawerView, float slideOffset) {
             accordionView.setProgress(1 - slideOffset);
-            Log.i("lateral menu", "progress: " + slideOffset);
+            // add your code here to manage drawerLayout
         }
 
         @Override
         public void onDrawerOpened(View drawerView) {
-
+            // add your code here to manage drawerLayout
         }
 
         @Override
         public void onDrawerClosed(View drawerView) {
-
+            // add your code here to manage drawerLayout
         }
 
         @Override
         public void onDrawerStateChanged(int newState) {
-
+            // add your code here to manage drawerLayout
         }
     };
 
@@ -52,19 +52,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
-
-
         // fill lateral menu
-        mAdapter = new LateralMenuAdapter(new String[]{"orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
-                "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
-                "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
-                "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
-                "orem ipsum dolor sit amet, consectetur adipiscing elit, sed ",
-                "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "t", "s"});
+        mAdapter = new LateralMenuAdapter(new String[]{"Ai mare, jo vull casar-me",
+                "Batre xabiero",
+                "Bressol",
+                "Cançonetes de Mariners",
+                "Cant de Batre",
+                "Cant de batre de Sella",
+                "Coses de Sant Vicent Ferrer",
+                "De l'Ebre a l'Albaida",
+                "De la flor de la farina",
+                "Des de que el sol ha sortit ",
+                "Déu va fer pobres i rics ",
+                "Dotze i U ",
+                "Dotze i u de la tia Rosario ",
+                "El casamiento de Maria la Xapa ",
+                "El Velatori",
+                " Els vetlatoris ",
+                "Fandango de l'emigrant ",
+                "Granaïna de Montaverner ",
+                "Granaïna del tio Palero ",
+                "Havanera de canyes i fang "});
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list_lateral_menu);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -88,19 +96,19 @@ public class MainActivity extends AppCompatActivity {
 
     public static class LateralMenuAdapter extends RecyclerView.Adapter<LateralMenuAdapter.ViewHolder> {
 
-        private String[] mDataset;
+        private String[] songs;
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView mTextView;
+            public TextView title;
 
             public ViewHolder(TextView v) {
                 super(v);
-                mTextView = v;
+                title = v;
             }
         }
 
-        public LateralMenuAdapter(String[] myDataset) {
-            mDataset = myDataset;
+        public LateralMenuAdapter(String[] songs) {
+            this.songs = songs;
         }
 
         @Override
@@ -108,20 +116,27 @@ public class MainActivity extends AppCompatActivity {
                                              int viewType) {
 
             TextView v = (TextView) LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.my_text_view, parent, false);
+                    .inflate(R.layout.lateral_menu_row, parent, false);
 
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "Deliberately no action performed,", Toast.LENGTH_LONG).show();
+                }
+            });
             ViewHolder vh = new ViewHolder(v);
+
             return vh;
         }
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mTextView.setText(mDataset[position]);
+            holder.title.setText(songs[position]);
         }
 
         @Override
         public int getItemCount() {
-            return mDataset.length;
+            return songs.length;
         }
     }
 }

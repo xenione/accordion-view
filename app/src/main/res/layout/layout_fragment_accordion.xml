@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xenione.libs.accordion.AccordionView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/accordionView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pep_botifarra_cover" />
+
+            <TextView
+                android:id="@+id/malagenya_lyrics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="@android:color/white"
+                android:textSize="35dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#7F000000"
+        android:gravity="center"
+        android:padding="@dimen/title_text_padding"
+        android:text="@string/title_view_pager_accordion"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+</com.xenione.libs.accordion.AccordionView>
