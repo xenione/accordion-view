@@ -1,6 +1,12 @@
-# accordion-view
+# Accordion-View
+
+![accordion](https://github.com/xenione/accordion-view/blob/master/art/ic_accordion_intro.png)
+
+[ ![Bintray](https://api.bintray.com/packages/xenione/maven/accordion-view/images/download.svg?version=1.0.1) ](https://bintray.com/xenione/maven/accordion-view/1.0.1/link)
 
 A Library that fold everything. just do it, we fold it. 5 minutes integration garantee.
+
+![Demo](https://github.com/xenione/accordion-view/blob/master/art/accordion-view.gif)
 
 Add it on your project:
 
