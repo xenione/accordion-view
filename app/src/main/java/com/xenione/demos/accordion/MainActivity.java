@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xenione.demos.accordion.fragments.PagerAdapter;
+import com.xenione.libs.accordion.AccordionDrawerListener;
 import com.xenione.libs.accordion.AccordionPageTransformer;
 import com.xenione.libs.accordion.AccordionView;
 
@@ -22,30 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private LateralMenuAdapter mAdapter;
 
     private AccordionView accordionView;
-
-    private DrawerLayout.DrawerListener drawerListener = new DrawerLayout.DrawerListener() {
-
-        @Override
-        public void onDrawerSlide(View drawerView, float slideOffset) {
-            accordionView.setProgress(1 - slideOffset);
-            // add your code here to manage drawerLayout
-        }
-
-        @Override
-        public void onDrawerOpened(View drawerView) {
-            // add your code here to manage drawerLayout
-        }
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            // add your code here to manage drawerLayout
-        }
-
-        @Override
-        public void onDrawerStateChanged(int newState) {
-            // add your code here to manage drawerLayout
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         // set listener on lateral menu
         DrawerLayout lateralMenu = (DrawerLayout) findViewById(R.id.drawer_layout);
-        lateralMenu.addDrawerListener(drawerListener);
         accordionView = (AccordionView) findViewById(R.id.accordion_lateral_menu);
-
+        lateralMenu.addDrawerListener(BuildDrawerListener(accordionView));
 
         // fill content with viewPager
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -92,6 +68,32 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setPageTransformer(true, new AccordionPageTransformer());
+    }
+
+    private DrawerLayout.DrawerListener BuildDrawerListener(AccordionView accordionView) {
+        return new AccordionDrawerListener(accordionView) {
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                // add your code here to manage drawerLayout
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                // add your code here to manage drawerLayout
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                // add your code here to manage drawerLayout
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+                // add your code here to manage drawerLayout
+            }
+        };
     }
 
     public static class LateralMenuAdapter extends RecyclerView.Adapter<LateralMenuAdapter.ViewHolder> {
