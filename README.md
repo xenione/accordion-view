@@ -139,14 +139,14 @@ Set your **DrawerLayout** as usual, but don't forget to pass through **Accordion
 # What next?
 -------
 
-Try to add AccordionView into a RecyclerView, for this I need any extra support, consider either contribute to project or make a donation.
+Try to add AccordionView into a RecyclerView, for this I need extra support, consider either contribute to the project or make a donation.
 
 
 ![progress](https://img.lishengcn.cn/progress?percent=45)
 
  target: **500** €  / raised: 223 €
 
- Thanks all contributors.
+ > **Thanks for all contributors**.
 
 * amounts updated every 24h
 
