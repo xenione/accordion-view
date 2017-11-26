@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.xenione.accordion.AccordionView
+    <com.xenione.libs.accordion.AccordionView
         android:id="@+id/accordion_lateral_menu"
         android:layout_width="200dp"
         android:layout_height="match_parent"
@@ -20,5 +20,5 @@
             android:id="@+id/list_lateral_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.xenione.accordion.AccordionView>
+    </com.xenione.libs.accordion.AccordionView>
 </android.support.v4.widget.DrawerLayout>

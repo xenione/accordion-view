@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.xenione.accordion.AccordionPageTransformer;
-import com.xenione.accordion.AccordionView;
+import com.xenione.libs.accordion.AccordionPageTransformer;
+import com.xenione.libs.accordion.AccordionView;
 import com.xenione.demos.accordion.fragments.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {

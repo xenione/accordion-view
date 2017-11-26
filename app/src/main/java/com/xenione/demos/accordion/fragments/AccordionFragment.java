@@ -26,7 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.xenione.accordion.AccordionView;
+import com.xenione.libs.accordion.AccordionView;
 import com.xenione.demos.accordion.R;
 
 
