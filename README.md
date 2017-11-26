@@ -55,17 +55,6 @@ Wrap your layout around **AccordionView**
 
     </ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="#7F000000"
-        android:gravity="center"
-        android:padding="@dimen/title_text_padding"
-        android:text="@string/title_view_pager_accordion"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
-
 </com.xenione.libs.accordion.AccordionView>
   ```  
 
@@ -79,12 +68,12 @@ Wrap your layout around **AccordionView**
  ```  
  where percentage goes from **0** (completly closed) to **1** (completly opened)
 
- **AccordionView** can came along **ViewPager** or **DrawerLayout**.
+ **AccordionView** may came along with **ViewPager** or **DrawerLayout**.
 
 * Added into **ViewPager**
 
 Set your ViewPager and adapter as usual, and don't forget to add into ViewPager AccordionPageTransformer' PageTransformer as it shows below.
-Important to have been identified your accordionView with android:id="@id/accordionView" according to previous note.
+It is important that accordionView have been identified with android:id="@id/accordionView" according to previous note.
  
 
   ```java
@@ -142,9 +131,8 @@ Set your **DrawerLayout** as usual, but don't forget to pass through **Accordion
 Try to add AccordionView into a RecyclerView, for this I need extra support, consider either contribute to the project or make a donation.
 
 
-![progress](https://img.lishengcn.cn/progress?percent=45)
+![progress](https://img.lishengcn.cn/progress?percent=45)  target: **500** €  / raised: 223 €
 
- target: **500** €  / raised: 223 €
 
  > **Thanks for all contributors**.
 
@@ -154,13 +142,13 @@ Try to add AccordionView into a RecyclerView, for this I need extra support, con
 # Donation
 -------
 
-The full money collected here will be destinated to improve Open Source Projects(accordiong to previus point).
+The full money collected here will be destinated to improve Open Source Projects.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WQH9LXLLELC3N)
 
 
 
- # Develop by
+ # Developed by
 -------
 
 Eugeni Josep Senent i Gabriel - @xenione
