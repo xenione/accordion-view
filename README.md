@@ -71,12 +71,14 @@ Wrap your layout around AccordionView
     accordionView.setProgress(percentage);
 
  ```  
- where percentage goes from 0 (complete close) to 1 (complete open)
+ where percentage goes from 0 (completly closed) to 1 (completly opened)
+
+ AccordionView can came along ViewPager or DrawerLayout.
 
 * Added into ViewPager
 
 Set your ViewPager and adapter as usual, and don't forget to add into ViewPager AccordionPageTransformer' PageTransformer as it shows below.
-Important to have been identified your accordionView with android:id="@id/accordionView" accordiong to previous note.
+Important to have been identified your accordionView with android:id="@id/accordionView" according to previous note.
  
 
   ```java
@@ -131,12 +133,15 @@ Set your DrawerLayout as usual, but don't forget to pass through AccordionDrawer
 # What next?
 -------
 
-Try to add AccordionView into a RecyclerView, 
+Try to add AccordionView into a RecyclerView, for this I need any extra support consider a donation.
+
+
+
 
 # Donation
 -------
 
-The full money collected here will be destinated to improve Open Source Projects.
+The full money collected here will be destinated to improve Open Source Projects(accordiong to previus point).
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WQH9LXLLELC3N)
 
