@@ -32,12 +32,6 @@ public class MatrixHelper {
 
     }
 
-    public Matrix mirrorY() {
-        Matrix matrix = new Matrix();
-        rotateY(matrix, 180);
-        return matrix;
-    }
-
     public void rotateX(Matrix matrix, int alpha) {
         camera.save();
         camera.rotateX(alpha);
@@ -66,63 +60,5 @@ public class MatrixHelper {
         camera.rotateZ(alpha);
         camera.getMatrix(matrix);
         camera.restore();
-    }
-
-    public void translate(Matrix matrix, float dx, float dy, float dz) {
-        camera.save();
-        camera.translate(dx, dy, dz);
-        camera.getMatrix(matrix);
-        camera.restore();
-    }
-
-    public void translateY(Matrix matrix, float dy) {
-        camera.save();
-        camera.translate(0, dy, 0);
-        camera.getMatrix(matrix);
-        camera.restore();
-    }
-
-    public static void setTranslate(float x, float y, Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        matrixElements[2] = x;
-        matrixElements[5] = y;
-        matrix.setValues(matrixElements);
-    }
-
-    public static void setTranslate(float[] translate, Matrix matrix) {
-        setTranslate(translate[0], translate[1], matrix);
-    }
-
-    public static float[] getTranslate(Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        return new float[]{matrixElements[2], matrixElements[5]};
-    }
-
-    public static void setScale(float sx, float sy, Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        matrixElements[0] = sx;
-        matrixElements[4] = sy;
-        matrix.setValues(matrixElements);
-    }
-
-    public static float getScaleX(Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        return matrixElements[0];
-    }
-
-    public static float getScaleY(Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        return matrixElements[4];
-    }
-
-    public static float[] getScale(Matrix matrix) {
-        float[] matrixElements = new float[9];
-        matrix.getValues(matrixElements);
-        return new float[]{matrixElements[0], matrixElements[4]};
     }
 }

@@ -113,26 +113,27 @@ public class AccordionView extends FrameLayout {
         srcPoint[0] = getWidth() / 2;
         srcPoint[1] = 0;
 
+        float alpha = calculateAlpha(percentage);
 
-        float alpha = (90 * percentage);
+        canvas.translate(percentage * getWidth(), 0);
 
         // draw left half
         matrixHelper.rotateY(drawLeftMatrix, alpha, 0, getHeight() / 2);
         drawLeftMatrix.mapPoints(dstPoint, srcPoint);
-
-        float scale = (getWidth() * (1 - percentage)) / (2 * dstPoint[0]);
-
-        canvas.translate(percentage * getWidth(), 0);
-        drawLeftMatrix.postScale(scale, scale, 0, getHeight() / 2);
         canvas.drawBitmap(leftBitmap, drawLeftMatrix, null);
 
         // draw right half
         projMatrix.setTranslate(getWidth() / 2, 0);
         matrixHelper.rotateY(drawRightMatrix, -alpha, getWidth() / 2, getHeight() / 2);
-        drawRightMatrix.postTranslate(2 * (dstPoint[0] - getWidth() / 2), 0); //-getWidth() * percentage
+        drawRightMatrix.postTranslate(2 * (dstPoint[0] - getWidth() / 2), 0);
         drawRightMatrix.setConcat(projMatrix, drawRightMatrix);
-        drawRightMatrix.postScale(scale, scale, 0, getHeight() / 2);
         canvas.drawBitmap(rightBitmap, drawRightMatrix, null);
+    }
+
+    private float calculateAlpha(float percentage) {
+        return (float) ((180 / Math.PI) * Math.asin((-(0.1111111 * Math.pow((1 - percentage), 2) * getWidth()) + Math.sqrt((0.01234567 * Math.pow((1 - percentage), 4) * Math.pow(getWidth(), 2)
+                - 0.0123457 * (Math.pow((1 - percentage) * getWidth(), 2) + 1327104) * percentage * (percentage - 2))))
+                / (Math.pow((1 - percentage) * getWidth(), 2) / 10368 + 128)));
     }
 
     public void setProgress(float percentage) {
