@@ -4,7 +4,7 @@
 
 [ ![Bintray](https://api.bintray.com/packages/xenione/maven/accordion-view/images/download.svg?version=1.0.1) ](https://bintray.com/xenione/maven/accordion-view/1.0.1/link)
 
-A Library that fold everything. just do it, we fold it. 5 minutes integration garantee.
+A Library that fold everything. Just do it, we fold it for you. 5 minutes integration garantee.
 
 ![Demo](https://github.com/xenione/accordion-view/blob/master/art/accordion-view.gif)
 
@@ -15,7 +15,7 @@ Gradle:
 compile 'com.xenione.libs:accordion:1.0.1'
 ```
 
-Wrap your layout around AccordionView 
+Wrap your layout around **AccordionView** 
 
 
 ```java
@@ -69,7 +69,7 @@ Wrap your layout around AccordionView
 </com.xenione.libs.accordion.AccordionView>
   ```  
 
-  Note that: AccordionView has id: accordionView keep it as long you use it along viewPager.
+  Note that: AccordionView has id: accordionView keep it as long as you use it along **ViewPager**.
 
   ```java
 
@@ -77,11 +77,11 @@ Wrap your layout around AccordionView
     accordionView.setProgress(percentage);
 
  ```  
- where percentage goes from 0 (completly closed) to 1 (completly opened)
+ where percentage goes from **0** (completly closed) to **1** (completly opened)
 
- AccordionView can came along ViewPager or DrawerLayout.
+ **AccordionView** can came along **ViewPager** or **DrawerLayout**.
 
-* Added into ViewPager
+* Added into **ViewPager**
 
 Set your ViewPager and adapter as usual, and don't forget to add into ViewPager AccordionPageTransformer' PageTransformer as it shows below.
 Important to have been identified your accordionView with android:id="@id/accordionView" according to previous note.
@@ -99,9 +99,9 @@ Important to have been identified your accordionView with android:id="@id/accord
 
 or 
 
-* Added into DrawerLayout
+* Added into **DrawerLayout**
 
-Set your DrawerLayout as usual, but don't forget to pass through AccordionDrawerListener.
+Set your **DrawerLayout** as usual, but don't forget to pass through **AccordionDrawerListener** as it showed below.
 
   ```java
 
@@ -139,9 +139,16 @@ Set your DrawerLayout as usual, but don't forget to pass through AccordionDrawer
 # What next?
 -------
 
-Try to add AccordionView into a RecyclerView, for this I need any extra support consider a donation.
+Try to add AccordionView into a RecyclerView, for this I need any extra support, consider either contribute to project or make a donation.
 
 
+![progress](https://img.lishengcn.cn/progress?percent=45)
+
+ target: **500** €  / raised: 223 €
+
+ Thanks all contributors.
+
+* amounts updated every 24h
 
 
 # Donation
