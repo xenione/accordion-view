@@ -6,6 +6,8 @@
 
 A Library that fold everything. Just do it, we fold it for you. 5 minutes integration garantee.
 
+Demo app available on [google play](https://play.google.com/store/apps/details?id=com.xenione.accordion)
+
 ![Demo](https://github.com/xenione/accordion-view/blob/master/art/accordion-view.gif)
 
 Add it on your project:
